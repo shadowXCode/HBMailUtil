@@ -334,9 +334,10 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
             if(len) 
             {
                 NSString *tmpStr = [[NSString alloc] initWithBytes:buf length:len encoding:NSUTF8StringEncoding];
-                [inputString appendString:tmpStr];
-                [tmpStr release];
-                
+                if (tmpStr) {
+                    [inputString appendString:tmpStr];
+                    [tmpStr release];
+                }
                 [self parseBuffer];
             }
             break;

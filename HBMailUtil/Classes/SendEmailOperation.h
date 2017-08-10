@@ -10,6 +10,8 @@
 
 #import "ConcurrentOperation.h"
 
+typedef void (^CallBack)(BOOL success,NSError *error);
+
 @interface SendEmailOperation : ConcurrentOperation
 @property (nonatomic, copy) NSString *to;
 @property (nonatomic, copy) NSString *subject;
@@ -26,6 +28,8 @@
 @property (nonatomic, copy) NSString *fromEmail;
 @property (nonatomic, copy) NSString *login;
 @property (nonatomic, copy) NSString *password;
+
+@property (nonatomic, strong) CallBack callback;
 
 # pragma mark 初始化配置信息
 + (void)setupDefaultConfig;

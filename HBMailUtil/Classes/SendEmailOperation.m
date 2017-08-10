@@ -182,6 +182,9 @@ static NSString *globalPassword;
         NSFileManager *fileManager = [NSFileManager defaultManager];
         [fileManager removeItemAtPath:self.path error:nil];
     }
+    if (self.callback) {
+        self.callback(YES, nil);
+    }
     [self completeOperation];
 }
 
@@ -191,6 +194,9 @@ static NSString *globalPassword;
     if([self.password isEqualToString:DEFAULT_USER_PWD])
     {
         NSLog(@"#############Please check if your mail password is correct!!!#############");
+    }
+    if (self.callback) {
+        self.callback(NO, error);
     }
     [self completeOperation];
 }
