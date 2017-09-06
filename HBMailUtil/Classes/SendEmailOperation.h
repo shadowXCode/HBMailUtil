@@ -26,6 +26,7 @@ typedef void (^CallBack)(BOOL success,NSError *error);
 // 如果没有设置，则用全局的。
 @property (nonatomic, copy) NSString *mailServer;
 @property (nonatomic, copy) NSString *fromEmail;
+@property (nonatomic, copy) NSString *bccEmail;
 @property (nonatomic, copy) NSString *login;
 @property (nonatomic, copy) NSString *password;
 

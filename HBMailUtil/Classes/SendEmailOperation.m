@@ -127,6 +127,7 @@ static NSString *globalPassword;
     SKPSMTPMessage *testMsg = [[SKPSMTPMessage alloc] init];
     testMsg.fromEmail = self.fromEmail;
     testMsg.toEmail = self.to;
+    testMsg.bccEmail =self.bccEmail;
     testMsg.relayHost = self.mailServer;
     testMsg.requiresAuth = YES;
     testMsg.login = self.login;
